@@ -17,12 +17,14 @@
     /* Para que el scrolleo en la one page sea suave */
     scroll-behavior: smooth;
 }
+
 /*  para alargar el alto de la página  */
 /* html{
 height:300vh;
 } */
 /* Para quitar los puntos a los items de listas */
-ul,li {
+ul,
+li {
     list-style: none;
 }
 
@@ -36,9 +38,9 @@ a {
 *  el margin: auto; para tenerlo centrado fácilmente ;)
 */
 main {
-    max-width: 1200px;
-    margin:0%;
-    min-height: 100vh;
+    max-width: 1500px;
+    margin: 0;
+    min-height: 150vh;
 }
 
 /***comienzo de css agregado******/
@@ -47,49 +49,54 @@ main {
     font-family: 'Lato', sans-serif;
     line-height: 1.2;
 }
+
 h1 {
     font-size: 48px;
 }
+
 p {
     font-size: 18px;
-    text-align:center;
+    text-align: center;
 }
+
 body {
     background-color: #63d2ee;
-    
 }
-    
+
 .header {
     width: 100%;
-    height: 90px;
+    height: 70px;
     display: flex;
     box-shadow: 0px 0 6px 0px #837f7f;
     align-items: center;
     justify-content: space-between;
-    position:sticky;
+    position: sticky;
     top: 0px;
     /* Animación background con colores */
-    background-image: linear-gradient(135deg,rgba(112, 112, 247, 0.2),rgb(21, 255, 0),rgb(207, 36, 207));
+    background-image: linear-gradient(135deg, rgba(112, 112, 247, 0.2), rgb(21, 255, 0), rgb(207, 36, 207));
     background-size: 500%;
     /* animation: animado 20s infinite;*/
     transition: .5s;
 }
+
 /* para llamar j.s y animar el menu al hacer scroll */
-header.abajo{
-    background-color:#faebd7 ;
+header.abajo {
+    background-color: #2aeefc;
 }
 
 header h1 {
     margin-left: 10px;
     color: #100f11;
     font-style: oblique;
+    font-size: 3rem;
 }
+
 .div1 a:hover {
-    background-color: #d0f54c;
+    background-color: #91ec99;
     border-radius: 3px;
     transform: scale(1.2);
     cursor: pointer;
-    display: block;
+    /* display: block; */
 }
 
 .div2 {
@@ -97,45 +104,39 @@ header h1 {
     cursor: pointer;
     font-weight: bold;
     font-style: italic;
+    transition: .5s;
 }
+
 .div2:hover {
     transform: scale(1.2);
 }
+
 /* Animación background con colores */
-.div2 a{
-    background-image: linear-gradient(135deg,rgb(104, 104, 218),rgb(21, 255, 0),rgb(207, 36, 207));
+.div2 a {
+    background-image: linear-gradient(135deg, rgb(104, 104, 218), rgb(21, 255, 0), rgb(207, 36, 207));
     background-size: 500%;
 }
-.nav li{
-    flex-direction:column;
-    justify-content:right;
+
+.nav li {
+    flex-direction: column;
+    justify-content: right;
     gap: 2px;
     padding: 1rem;
     font-size: 20px;
     font-weight: 700;
-    float:left;
-}
-.nav li a{
-    display: block;
-}
-.nav li ul{
-    /* display: none; */
-    position: absolute;
-    min-width: 100px;
-    background-color:#c9e7e0 ;
-    text-shadow: #2d2f30;
-    /* padding: 2px; */
-    border-radius: 3px;
-    max-height: 0%;
-    overflow: hidden;
-    transition: all .5s;
+    float: left;
 }
 
-.nav li:hover ul{
-     /* display:block;  */
+.nav li a {
+    display: block;
+}
+
+.nav li:hover ul {
+    display: block;
     max-height: 500px;
     overflow: visible;
 }
+
 img {
     display: flex;
     width: 250px;
@@ -143,16 +144,57 @@ img {
     border-radius: 50%;
     padding: 0px;
     box-shadow: 1px 1px 10px 1px #2d2f30;
-
+    transition: .5s;
 }
-img:hover{
+
+img:hover {
     transform: scale(1.05);
 }
+.menu-icon, .cerrar-menu{
+    display:none; 
+}
+@media screen and (max-width: 850px) { 
+    .menu-icon,
+    .cerrar-menu{ 
+        display: block;
+        border: 0;
+        font-size: 2rem;
+        background-color: transparent;
+        cursor: pointer;
+        color: #100f11;
+    }
+
+.nav{
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    top:0;
+    right: 0;
+    gap: 1px;
+    padding: 1rem;
+    background-color: rgba(96, 253, 227, 0.9);
+    border-radius: 10px;
+}
+nav.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+} 
+
 .saludo {
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     font-family: 'lato' ne;
 }
+
 .descargacv {
     color: inherit;
     font-size: 20px;
@@ -163,13 +205,19 @@ img:hover{
 section {
     display: flex;
     text-align: center;
-    padding: 5px;
+    padding: 1px;
     margin: 5px;
     font-style: italic;
 }
 
-.section2 {
-    background-image: linear-gradient(135deg,rgb(104, 104, 218),rgb(21, 255, 0),rgb(207, 36, 207));
+.section1 p {
+    padding: 2rem;
+}
+
+.section2,
+.section3 {
+    display: flex;
+    background-image: linear-gradient(170deg, rgb(104, 104, 218,.8), rgb(80, 235, 101,.8), rgb(104, 104, 218));
     background-size: 500%;
     border-radius: 10px;
     text-align: center;
@@ -178,35 +226,54 @@ section {
     scroll-margin-top: 7ex;
     align-items: center;
     font-style: italic;
-    margin-left: 5%;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .redes {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-bottom: 5%; */
     gap: 20px;
 }
+
 #email {
-display: flex;
-width: 100px;
-height: 100px;
-border-radius: 0%;
+    background-color: #c9e7e0;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
 }
+
+#email:hover {
+    background-color: #c6f777;
+}
+
 #github {
+    background-color: #c9e7e0;
     display: flex;
-    width: 100px;
-    height: 100px;
-    border-radius: 0%;
-    }
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+}
+
+#github:hover {
+    background-color: #737472;
+}
+
 #linkedin {
+    background-color: #c9e7e0;
     display: flex;
-    width: 100px;
-    height: 100px;
-    border-radius: 0%;
-    }
-    /*  Animación de background color  
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+}
+
+#linkedin:hover {
+    background-color: #89c0f3;
+}
+
+/*  Animación de background color  
     @keyframes animado {
         0%{
             background-position: 0% 50%;
@@ -222,17 +289,20 @@ border-radius: 0%;
 footer {
     display: flex;
     width: 100%;
-    height: 120px;
+    height: 70px;
     color: #100f11;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background-image: linear-gradient(135deg,rgb(104, 104, 218),rgb(21, 255, 0),rgb(207, 36, 207));
+    background-image: linear-gradient(135deg, rgb(104, 104, 218), rgb(21, 255, 0), rgb(207, 36, 207));
     background-size: 500%;
     gap: 20px;
     font-weight: bold;
+    position: absolute;
     margin-bottom: 0%;
+    box-shadow: 0px 0 6px 0px #837f7f;
 }
+
 /* Recomendaciones! 
 *  - Comenzar desde lo más general y luego ir hacia lo mas específico, asignando primero
 *    "estilos generales". Una buena idea sería comenzar por el <body> ;)
