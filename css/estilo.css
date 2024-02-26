@@ -60,7 +60,7 @@ p {
 }
 
 body {
-    background-image: url(./img/img\ fondo.jpg);
+    background-image: url(img/img fondo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
